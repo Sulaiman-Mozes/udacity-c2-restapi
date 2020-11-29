@@ -1,4 +1,4 @@
-require('dotenv').config();
+// require('dotenv').config();
 
 export const config = {
   "postgress": {
@@ -12,5 +12,6 @@ export const config = {
     "AWS_REGION": process.env.AWS_REGION,
     "AWS_PROFILE": process.env.AWS_PROFILE,
     "AWS_MEDIA_BUCKET": process.env.AWS_MEDIA_BUCKET
-  }
+  },
+  "SECRET_KEY": process.env.SECRET_KEY
 }

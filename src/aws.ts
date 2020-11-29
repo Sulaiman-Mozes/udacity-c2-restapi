@@ -4,8 +4,10 @@ import { config } from './config/config';
 const c = config.aws;
 
 //Configure AWS
-var credentials = new AWS.SharedIniFileCredentials({profile: c.AWS_PROFILE});
-AWS.config.credentials = credentials;
+if(c.AWS_PROFILE !== "DEPLOYED") {
+  const credentials = new AWS.SharedIniFileCredentials({profile: c.AWS_PROFILE});
+  AWS.config.credentials = credentials;
+}
 
 export const s3 = new AWS.S3({
   signatureVersion: 'v4',
